@@ -45,10 +45,14 @@ bufferline.setup({
 	}
 })
 
--- nvim tree
+-- NvimTree
 -- empty setup using defaults
 require("nvim-tree").setup()
 vim.cmd("NvimTreeOpen")
+-- keymap for toggle NvimTree
+vim.api.nvim_set_keymap('i', '<c-n>', '<Cmd>NvimTreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-n>', '<Cmd>NvimTreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('v', '<c-n>', '<Cmd>NvimTreeToggle<CR>', {noremap = true})
 
 -- init coq
 require("coq")
