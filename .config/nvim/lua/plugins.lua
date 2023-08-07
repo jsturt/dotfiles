@@ -3,8 +3,6 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
--- Edits I've made (commented out parts) are done with "-- //"
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -47,36 +45,13 @@ return require('packer').startup(function(use)
 	use 'protex/better-digraphs.nvim' 
 
 	-- coq completion
-	use {'ms-jpq/coq_nvim'}
-	use {'ms-jpq/coq.artifacts'}
+	use 'ms-jpq/coq_nvim'
+	use 'ms-jpq/coq.artifacts'
 
 	-- lspconfig
-	use {'neovim/nvim-lspconfig'}
+	use 'neovim/nvim-lspconfig'
 
-
-  -- Load on a combination of conditions: specific filetypes or commands
-  -- Also run code after load (see the "config" key)
-  -- // use {
-  -- //   'w0rp/ale',
-  -- //   ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
-  -- //   cmd = 'ALEEnable',
-  -- //   config = 'vim.cmd[[ALEEnable]]'
-  -- // }
-
-  -- Plugins can have dependencies on other plugins
-	-- Auto-Complete suggestions which integrates with nvims lsp
-  -- // use {
-  -- //   'haorenW1025/completion-nvim',
-  -- //   opt = true,
-  -- //   requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-  -- // }
-
-
-  -- Plugins can have post-install/update hooks
-	-- Markdown previewer! sounds very cool
-  --use {'iamcco/markdown-preview.nvim', cmd = 'MarkdownPreview'}
-  --use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-	-- install without yarn or npm
+	-- Markdown previewer!
 	use({
 	    "iamcco/markdown-preview.nvim",
 	    run = function() vim.fn["mkdp#util#install"]() end,

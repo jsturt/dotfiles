@@ -68,5 +68,7 @@ lspconfig.ccls.setup{
 		compilationDatabaseDirectory = "builddir";
 	};
 }
+
 -- init pylsp
 lspconfig.pylsp.setup {}
+
